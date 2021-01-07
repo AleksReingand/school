@@ -52,16 +52,14 @@ public class SchoolController
   @PostMapping("/school")
   public ResponseEntity<School> createSchool(@RequestBody School school)
   {
-//    School newSchool = schoolRepository.save(
-//                School.builder()
-//                        .schoolId(school.getSchoolId())
-//                        .name(school.getName())
-//                        .employeesBySchoolId(school.getEmployeesBySchoolId())
-//                        .studentsBySchoolId(school.getStudentsBySchoolId())
-//                        .build());
-//    return new ResponseEntity<>(newSchool, HttpStatus.CREATED);
-
-    return null;
+    School newSchool = schoolRepository.save(
+                School.builder()
+                        .schoolId(school.getSchoolId())
+                        .name(school.getName())
+                        .employeesBySchoolId(school.getEmployeesBySchoolId())
+                        .studentsBySchoolId(school.getStudentsBySchoolId())
+                        .build());
+    return new ResponseEntity<>(newSchool, HttpStatus.CREATED);
   }
 
   @GetMapping("/employee")
